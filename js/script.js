@@ -21,7 +21,13 @@ if (playerInput == '1') {
   playerMove = 'nożyce';
 } else {
   printMessage('Błędny ruch.');
-  playerInput = 1;
-  playerMove = 'kamień';
+  playerInput = Math.floor(Math.random() * 3 + 1);
+  if (playerInput == '1') {
+    playerMove = 'kamień';
+  } else if (playerInput == '2') {
+    playerMove = 'papier';
+  } else {
+    playerMove = 'nożyce';
+  }
 }
 printMessage('Twój ruch: ' + playerMove);
